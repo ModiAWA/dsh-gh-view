@@ -30,7 +30,6 @@
 
 - **插件管理器** —— **Plugins → Add plugin**，目标填 `dsh-gh-view`
 - **CLI** —— `dsh plugin --profile <profile> add dsh-gh-view`
-  （`<profile>` 是你启动的 profile；Desktop profile 由 Desktop 外壳管理，不走 npm CLI）
 
 开发时想用本地 checkout，则改为添加绝对目录：
 
@@ -91,7 +90,7 @@ gh_search(query: "repo:owner/name is:open label:bug", limit?, image?: true)
 
 ### 默认仓库 —— 跟随工作区
 
-仓库类工具接受显式 `repo`。省略时，gh-view 会读取当前会话工作目录的 git remote 并自动选择一个（`gh_search` 则从查询里的 `repo:` 限定符取范围）：
+仓库类工具接受显式 `repo`。省略时，gh-view 会读取当前会话工作目录的 git remote 并自动选择一个：
 
 - **`upstream` 优先于 `origin`** —— 在 fork 中，你真正关心的 Issue 和 PR 属于 `upstream`。
 - 如果只有 `origin`，就用它。
@@ -353,8 +352,7 @@ DSH 的 Web 服务器在分派命名路由时不做 cookie、Host 或 Origin 校
 
 - DeepSeek Harness **`^0.2.2-rc.3`** —— 从 `rc.3` 到 `<0.3.0` 的 `0.2.x` 版本（在 `engines.dsh` 中声明；不兼容的 DSH 会拒绝安装）
 - Node.js **22+**（在 `engines.node` 中声明）
-- 带 `webServer`、`tools`、`attachments` 和 `workspaceRegistry` 的 profile
-  （Web profile 自带这四项；缺少时插件不会激活）
+- 带 `webServer`、`tools`、`attachments` 和 `workspaceRegistry` 的 profile（Web profile 自带）
 - `gh` CLI *或* 可访问 `api.github.com` 的网络
 - Microsoft Edge 或 Google Chrome，仅图片卡片需要
 

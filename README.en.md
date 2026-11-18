@@ -32,8 +32,6 @@ Install by package name:
 
 - **Plugin Manager** — **Plugins → Add plugin**, target `dsh-gh-view`
 - **CLI** — `dsh plugin --profile <profile> add dsh-gh-view`
-  (`<profile>` is the profile you boot; the Desktop profile is managed by the
-  Desktop shell, not the npm CLI)
 
 From a checkout while developing, add the absolute directory instead:
 
@@ -101,8 +99,7 @@ gh_search(query: "repo:owner/name is:open label:bug", limit?, image?: true)
 ### Default repository — follows the workspace
 
 The repository tools accept an explicit `repo`. When you omit it, gh-view reads
-the git remotes of the session's working directory and picks one automatically
-(`gh_search` takes its scope from the query's `repo:` qualifier instead):
+the git remotes of the session's working directory and picks one automatically:
 
 - **`upstream` wins over `origin`** — in a fork, `upstream` is the project whose
   issues and pull requests you actually care about.
@@ -503,7 +500,7 @@ can mint a key per query string.
   `<0.3.0` (declared as `engines.dsh`; an incompatible DSH refuses the install)
 - Node.js **22+** (declared as `engines.node`)
 - A profile with `webServer`, `tools`, `attachments` and `workspaceRegistry`
-  (the Web profile ships all four; the plugin does not activate without them)
+  (the Web profile ships them)
 - `gh` CLI *or* network access to `api.github.com`
 - Microsoft Edge or Google Chrome, for image cards only
 
