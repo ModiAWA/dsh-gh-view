@@ -2,6 +2,14 @@
 
 Notable changes to `dsh-gh-view`. Releases follow semantic versioning.
 
+## 1.0.1 — 2026-11-19
+
+Documentation only.
+
+- README is now a Chinese usage manual; the previous English README is kept as
+  `README.en.md`.
+- Implementation and security design notes moved to `docs/IMPLEMENTATION.md`.
+
 ## 1.0.0 — 2026-11-19
 
 First release.

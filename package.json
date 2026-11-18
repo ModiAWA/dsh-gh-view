@@ -1,6 +1,6 @@
 {
   "name": "dsh-gh-view",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "Browse GitHub repos, issues and pull requests by number, with a rendered image card and a side panel.",
   "keywords": [
