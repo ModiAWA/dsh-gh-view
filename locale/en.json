@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "GitHub viewer",
+    "description": "Looks up repos, issues and pull requests by #number and renders a summary card image."
+  }
+}

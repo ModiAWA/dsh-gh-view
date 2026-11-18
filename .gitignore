@@ -1,0 +1,15 @@
+# Node
+node_modules/
+npm-debug.log*
+*.log
+
+# Packed tarballs and local inspection output
+*.tgz
+pack.json
+.pack-dryrun.json
+smoke-card.png
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini

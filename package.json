@@ -1,0 +1,57 @@
+{
+  "name": "dsh-gh-view",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Browse GitHub repos, issues and pull requests by number, with a rendered image card and a side panel.",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "github",
+    "pull-request",
+    "issue"
+  ],
+  "author": "ModiAWA",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ModiAWA/dsh-gh-view.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ModiAWA/dsh-gh-view/issues"
+  },
+  "homepage": "https://github.com/ModiAWA/dsh-gh-view#readme",
+  "engines": {
+    "node": ">=22",
+    "dsh": "^0.2.2-rc.3"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./lib/*": "./lib/*",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "lib",
+    "locale/*.json",
+    "icon.svg",
+    "gh-view-overview.png"
+  ],
+  "scripts": {
+    "test": "node --test tests/manifest.test.mjs tests/lib.test.mjs tests/docs.test.mjs tests/review-regressions.test.mjs tests/pack.test.mjs",
+    "overview": "node scripts/overview.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true
+    }
+  }
+}

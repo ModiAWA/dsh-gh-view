@@ -1,0 +1,4 @@
+- insert:
+    - id: gh-view
+      name: dsh-gh-view
+      config: {}

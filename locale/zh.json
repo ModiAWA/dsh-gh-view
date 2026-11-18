@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "GitHub 速览",
+    "description": "按 #编号 查阅仓库、Issue 与 PR，并渲染成一张速览图卡。"
+  }
+}
