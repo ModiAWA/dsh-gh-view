@@ -460,9 +460,11 @@ test('wiring: rendering is capped and built file URLs are escaped', () => {
   assert.ok(renderer.includes('data:image'), 'only http(s) or inline images may become card sources')
 })
 
-test('sources: no GBK-mangled punctuation survives in shipped text', () => {
+test('sources: no GBK-mangled punctuation survives in shipped code', () => {
   // These code points are what UTF-8 punctuation turns into after a round trip
-  // through a GBK console; none of them belongs in this English-source tree.
+  // through a GBK console; none of them belongs in a code or config file. Docs
+  // are excluded: they are deliberately bilingual now, and the ordinary Chinese
+  // character U+8DEF is legitimate there.
   const mangled = /[\u9225\u923d\u6a9a\u8def\ufffd]/
   const walk = (dir) => {
     const out = []
@@ -470,7 +472,7 @@ test('sources: no GBK-mangled punctuation survives in shipped text', () => {
       if (entry.name === 'node_modules' || entry.name.startsWith('.')) continue
       const full = join(dir, entry.name)
       if (entry.isDirectory()) out.push(...walk(full))
-      else if (/\.(js|mjs|json|md|yml|svg)$/.test(entry.name)) out.push(full)
+      else if (/\.(js|mjs|json|yml)$/.test(entry.name)) out.push(full)
     }
     return out
   }
